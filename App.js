@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View , StatusBar,TextInput, Dimensions}  from 'react-native';
+import { StyleSheet, Text, View , StatusBar,TextInput, Dimensions, Platform}  from 'react-native';
 
 const {height, width} = Dimensions.get("window")
 
@@ -27,14 +27,32 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize:30,
     marginTop:100,
-    fontWeight:'200'
+    fontWeight:'200',
+    marginBottom: 30 
   },
   card:{
     backgroundColor:'white',
     flex:1,
-    width: width - 50
+    width: width - 25,
+    height: height - 10, 
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 20,
+    ...Platform.select({
+      ios:{
+        shadowColor:'rgb(50,50,50)',
+        shadowOpacity:0.5,
+        shadowRadius:5,
+        shadowOffset:{
+          height:-1,
+          width:0
+        }
+      },
+      android:{
+        elevation:3
+      }
+    })
   },
   input:{
-
+    
   }
 });
