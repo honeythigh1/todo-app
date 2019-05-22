@@ -1,11 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View , StatusBar,TextInput, Dimensions}  from 'react-native';
+
+const {height, width} = Dimensions.get("window")
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <StatusBar barStyle="light-content"/>
+        <Text style={styles.title}>To Do App!</Text>
+        <View style={styles.card}>
+          <TextInput style={styles.input} placeholder={"New To Do"}/>
+        </View>
       </View>
     );
   }
@@ -14,8 +20,21 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f23657',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  title:{
+    color: 'white',
+    fontSize:30,
+    marginTop:100,
+    fontWeight:'200'
+  },
+  card:{
+    backgroundColor:'white',
+    flex:1,
+    width: width - 50
+  },
+  input:{
+
   }
 });
