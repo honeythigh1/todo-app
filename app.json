@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "hello expo",
+    "name": "test todoapp",
     "slug": "todoapp",
     "privacy": "public",
     "sdkVersion": "32.0.0",
